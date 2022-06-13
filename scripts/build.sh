@@ -27,7 +27,5 @@ basedir() {
   echo ${full_dir}
 }
 
-docker buildx build \
-  -t quay.io/kameshsampath/drone-java-maven-plugin \
-  -f "$(basedir)/../docker/Dockerfile" \
-  "$(basedir)/.."
+drone exec --secret-file="$(basedir)/../.env" \
+  --include build-image
