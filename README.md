@@ -6,17 +6,18 @@ A [Drone](https://drone.io) plugin to build Java applications using [Apache Mave
 
 The following settings changes this plugin's behavior.
 
-* GOALS (optional) An array of maven goals to run.Defaults: "-DskipTests clean install" .
-* MAVEN_MIRROR_URL (optional) The Maven repository mirror url.
-* SERVER_USER (optional) The username for the maven repository manager server.
-* SERVER_PASSWORD (optional) The password for the maven repository manager server.
-* PROXY_USER (optional) The username for the proxy server.
-* PROXY_PASSWORD (optional) The password for the proxy server.
-* PROXY_PORT (optional) Port number for the proxy server.
-* PROXY_HOST (optional) Proxy server Host.
-* PROXY_NON_PROXY_HOSTS (optional) Non proxy server host.
-* PROXY_PROTOCOL (optional) Protocol for the proxy ie http or https.
-* CONTEXT_DIR (optional) The context directory within the repository for sources on
+* goals (optional) An array of maven goals to run.Defaults: "-DskipTests clean install" .
+* maven_modules (optional) An array of maven modules to be built incase of a multi module maven project.
+* maven_mirror_url (optional) The Maven repository mirror url.
+* server_user (optional) The username for the maven repository manager server.
+* server_password (optional) The password for the maven repository manager server.
+* proxy_user (optional) The username for the proxy server.
+* proxy_password (optional) The password for the proxy server.
+* proxy_port (optional) Port number for the proxy server.
+* proxy_host (optional) Proxy server Host.
+* proxy_non_proxy_hosts (optional) Non proxy server host.
+* proxy_protocol (optional) Protocol for the proxy ie http or https.
+* context_dir (optional) The context directory within the repository for sources on
         which we want to execute maven goals.Defaults to Drone workspace root.
 
 Below is an example `.drone.yml` that uses this plugin.

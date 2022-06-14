@@ -84,4 +84,9 @@ else
   PLUGIN_GOALS="${PLUGIN_GOALS//,/ }"
 fi 
 
+if [ -n "${PLUGIN_MAVEN_MODULES}" ];
+then
+  PLUGIN_GOALS="-pl${PLUGIN_MAVEN_MODULES} ${PLUGIN_GOALS}"
+fi
+
 exec bash -c "mvn -s ${MAVEN_CONFIG}/settings.xml ${PLUGIN_GOALS}"
