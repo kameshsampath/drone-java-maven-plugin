@@ -28,4 +28,4 @@ basedir() {
 }
 
 drone exec --secret-file="$(basedir)/../.env" \
-  --include build-image
+  "$(basedir)/../.drone.yml"

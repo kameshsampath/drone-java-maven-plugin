@@ -35,9 +35,9 @@ if [ -n "${PLUGIN_PROXY_HOST}" -a -n "${PLUGIN_PROXY_PORT}" ]; then
 		<username>${PLUGIN_PROXY_USER}</username>\
 		<password>${PROXY_PASSWORD}</password>"
 	fi
-	if [ -n "${PROXY_NON_PROXY_HOSTS}" ]; then
+	if [ -n "${PROXY_NON_PROXY_HOSTS//,/|}" ]; then
 	xml="$xml\
-		<nonProxyHosts>${PROXY_NON_PROXY_HOSTS}</nonProxyHosts>"
+		<nonProxyHosts>${PROXY_NON_PROXY_HOSTS//,/|}</nonProxyHosts>"
 	fi
 	xml="$xml\
 		</proxy>"

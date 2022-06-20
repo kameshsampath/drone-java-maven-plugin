@@ -6,7 +6,8 @@ A [Drone](https://drone.io) plugin to build Java applications using [Apache Mave
 
 The following settings changes this plugin's behavior.
 
-* goals (optional) An array of maven goals to run.Defaults: "-DskipTests clean install" .
+* context_dir (optional) The context directory within the source repository where `pom.xml` is found to execute the maven goals. Defaults to Drone workspace root.
+* goals (optional) An array of maven goals to run.Defaults: `-DskipTests clean install`.
 * maven_modules (optional) An array of maven modules to be built incase of a multi module maven project.
 * maven_mirror_url (optional) The Maven repository mirror url.
 * server_user (optional) The username for the maven repository manager server.
@@ -15,10 +16,8 @@ The following settings changes this plugin's behavior.
 * proxy_password (optional) The password for the proxy server.
 * proxy_port (optional) Port number for the proxy server.
 * proxy_host (optional) Proxy server Host.
-* proxy_non_proxy_hosts (optional) Non proxy server host.
+* proxy_non_proxy_hosts (optional) An array of non proxy server hosts.
 * proxy_protocol (optional) Protocol for the proxy ie http or https.
-* context_dir (optional) The context directory within the repository for sources on
-        which we want to execute maven goals.Defaults to Drone workspace root.
 
 Below is an example `.drone.yml` that uses this plugin.
 

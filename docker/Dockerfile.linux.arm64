@@ -1,4 +1,4 @@
-FROM docker.io/maven:3.8.5-openjdk-11-slim
+FROM --platform=linux/arm64 docker.io/maven:3.8.5-openjdk-11-slim
 LABEL org.opencontainers.image.source https://github.com/kameshsampath/drone-java-maven-plugin
 LABEL org.opencontainers.image.authors="Kamesh Sampath<kamesh.sampath@hotmail.com>"
 
