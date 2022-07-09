@@ -89,4 +89,16 @@ then
   PLUGIN_GOALS="-pl ${PLUGIN_MAVEN_MODULES} ${PLUGIN_GOALS}"
 fi
 
-exec bash -c "mvn -s ${MAVEN_CONFIG}/settings.xml ${PLUGIN_GOALS}"
+MVN_COMMAND="mvn -s ${MAVEN_CONFIG}/settings.xml ${PLUGIN_GOALS}"
+
+if [ -n "${PLUGIN_CONTEXT_DIR}" ];
+then
+  MVN_COMMAND=" $MVN_COMMAND -f ${PLUGIN_CONTEXT_DIR}"
+fi
+
+if [ "${PLUGIN_LOG_LEVEL}" == "debug" ];
+then
+	printf "Running command %s" "${MVN_COMMAND}"
+fi
+
+exec bash -c "$MVN_COMMAND"

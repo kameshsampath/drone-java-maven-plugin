@@ -1,0 +1,35 @@
+{
+  "containerimage.buildinfo/linux/amd64": {
+    "frontend": "dockerfile.v0",
+    "attrs": {
+      "filename": "Dockerfile"
+    },
+    "sources": [
+      {
+        "type": "docker-image",
+        "ref": "docker.io/library/maven:3.8.5-openjdk-11-slim",
+        "pin": "sha256:120d2301d5c0650690ee57a2e3a1aeb3ec047f4fdf007f695d7cfa9cee97a956"
+      }
+    ]
+  },
+  "containerimage.buildinfo/linux/arm64": {
+    "frontend": "dockerfile.v0",
+    "attrs": {
+      "filename": "Dockerfile"
+    },
+    "sources": [
+      {
+        "type": "docker-image",
+        "ref": "docker.io/library/maven:3.8.5-openjdk-11-slim",
+        "pin": "sha256:120d2301d5c0650690ee57a2e3a1aeb3ec047f4fdf007f695d7cfa9cee97a956"
+      }
+    ]
+  },
+  "containerimage.descriptor": {
+    "mediaType": "application/vnd.docker.distribution.manifest.list.v2+json",
+    "digest": "sha256:2858cc789b18f17e196d3c8a02bfdf650c29157229ba316587308978cae0174e",
+    "size": 743
+  },
+  "containerimage.digest": "sha256:2858cc789b18f17e196d3c8a02bfdf650c29157229ba316587308978cae0174e",
+  "image.name": "quay.io/kameshsampath/drone-java-maven-plugin"
+}

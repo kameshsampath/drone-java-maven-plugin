@@ -27,5 +27,11 @@ basedir() {
   echo ${full_dir}
 }
 
-drone exec --secret-file="$(basedir)/../.env" \
-  "$(basedir)/../.drone.yml"
+docker buildx build \
+  --build-arg BUILDKIT_MULTI_PLATFORM=1 \
+  --platform=linux/amd64 \
+  --platform=linux/arm64 \
+  --push \
+  --metadata-file="$(basedir)/../docker/metadata.json" \
+  --tag quay.io/kameshsampath/drone-java-maven-plugin \
+  -f "$(basedir)/../docker/Dockerfile" "$(basedir)/.."
