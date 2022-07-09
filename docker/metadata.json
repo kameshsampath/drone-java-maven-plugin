@@ -27,9 +27,9 @@
   },
   "containerimage.descriptor": {
     "mediaType": "application/vnd.docker.distribution.manifest.list.v2+json",
-    "digest": "sha256:2858cc789b18f17e196d3c8a02bfdf650c29157229ba316587308978cae0174e",
+    "digest": "sha256:d829b093d94872d3bd86f558b32694f1bf1ebdd0fb995c6595cebded592b30af",
     "size": 743
   },
-  "containerimage.digest": "sha256:2858cc789b18f17e196d3c8a02bfdf650c29157229ba316587308978cae0174e",
+  "containerimage.digest": "sha256:d829b093d94872d3bd86f558b32694f1bf1ebdd0fb995c6595cebded592b30af",
   "image.name": "quay.io/kameshsampath/drone-java-maven-plugin"
 }
