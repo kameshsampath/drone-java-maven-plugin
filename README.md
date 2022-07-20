@@ -27,7 +27,7 @@ name: default
 
 steps:
 - name: build-java-app
-  image: quay.io/kameshsampath/drone-java-maven-plugin
+  image: docker.io/kameshsampath/drone-java-maven-plugin:v1.0.2
   pull: if-not-exists
   settings:
     goals: 
@@ -56,5 +56,5 @@ docker run --rm -e MAVEN_MIRROR_URL='http://192.168.68.120:8081/repository/maven
   -e DRONE_BUILD_STATUS=success \
   -w /drone/src \
   -v $(pwd):/drone/src \
-  quay.io/kameshsampath/drone-java-maven-plugin
+  docker.io/kameshsampath/drone-java-maven-plugin:v1.0.2
 ```
