@@ -10,16 +10,19 @@ RUN apt-get update \
   && apt-get install -y ca-certificates \
   && rm -rf /var/lib/apt/lists/*
 
-RUN adduser --system --uid 1001 dev \
-    && mkdir -p /home/dev/.m2 \
-    && chown 1001:0 /home/dev/.m2
+# TODO: enable to run as non-root
+# RUN adduser --system --uid 1001 dev \
+#     && mkdir -p /home/dev/.m2 \
+#     && chown 1001:0 /home/dev/.m2
 
 ADD run.sh /bin/
 RUN chmod +x /bin/run.sh
 
-USER dev
+# TODO: enable to run as non-root
+# USER dev
 
-ENV USER_HOME_DIR=/home/dev
-ENV MAVEN_CONFIG=/home/dev/.m2
+# TODO: enable to run as non-root
+# ENV USER_HOME_DIR=/home/dev
+# ENV MAVEN_CONFIG=/home/dev/.m2
 
 CMD ["/bin/run.sh"]
