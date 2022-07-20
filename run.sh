@@ -65,7 +65,9 @@ fi
 
 if [ -z "$MAVEN_CONFIG" ]; 
 then
-  MAVEN_CONFIG=/home/dev/.m2
+  # TODO enable it when running as non-root user
+  # MAVEN_CONFIG=/home/dev/.m2
+  MAVEN_CONFIG=/root/.m2
 fi
 
 init_maven_settings
@@ -89,7 +91,7 @@ then
   PLUGIN_GOALS="-pl ${PLUGIN_MAVEN_MODULES} ${PLUGIN_GOALS}"
 fi
 
-MVN_COMMAND="mvn -s ${MAVEN_CONFIG}/settings.xml ${PLUGIN_GOALS}"
+MVN_COMMAND="mvn -B -s ${MAVEN_CONFIG}/settings.xml ${PLUGIN_GOALS}"
 
 if [ -n "${PLUGIN_CONTEXT_DIR}" ];
 then
