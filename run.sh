@@ -57,7 +57,7 @@ if [ -n "${PLUGIN_MAVEN_MIRROR_URL}" ]; then
 	xml="    <mirror>\
 	<id>mirror.default</id>\
 	<url>${PLUGIN_MAVEN_MIRROR_URL}</url>\
-	<mirrorOf>central</mirrorOf>\
+	<mirrorOf>*</mirrorOf>\
 	</mirror>"
 	sed -i "s|<!-- ### mirrors from ENV ### -->|$xml|" "$MAVEN_CONFIG/settings.xml"
 fi
